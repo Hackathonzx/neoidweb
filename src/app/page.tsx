@@ -3,6 +3,33 @@
 import { useState } from 'react';
 import Head from 'next/head';
 
+
+
+
+// Mock definitions for demonstration purposes
+const neoID = {
+  registerUser: async (did: string) => {
+    // Simulate a network request
+    return new Promise((resolve) => setTimeout(resolve, 1000));
+  },
+};
+
+const reputationManager = {
+  updateReputation: async (did: string, reputation: string) => {
+    // Simulate a network request
+    return new Promise((resolve) => setTimeout(resolve, 1000));
+  },
+};
+
+const neoIDGovernance = {
+  createProposal: async (proposalDescription: string) => {
+    // Simulate a network request
+    return new Promise((resolve) => setTimeout(resolve, 1000));
+  },
+};
+
+
+
 export default function HomePage() {
   const [did, setDid] = useState('');
   const [reputation, setReputation] = useState('');
@@ -13,9 +40,20 @@ export default function HomePage() {
     try {
       await neoID.registerUser(did);
       setMessage('User registered successfully!');
-    } catch (error) {
-      setMessage('Error registering user: ' + error.message);
+    } catch (error ) {
+      if (error instanceof Error){
+        setMessage('Error registering user: ' + error.message);
+
+      }
+      else{
+        setMessage('Error registering user: An unknown error occurred.');
+
+      }
     }
+    // else {
+    //   setMessage('Error registering user: An unknown error occurred.');
+    // }
+    
   };
 
   const handleUpdateReputation = async () => {
@@ -23,7 +61,13 @@ export default function HomePage() {
       await reputationManager.updateReputation(did, reputation);
       setMessage('Reputation updated successfully!');
     } catch (error) {
-      setMessage('Error updating reputation: ' + error.message);
+      if (error instanceof Error){
+        setMessage('Error updating reputation: ' + error.message);
+
+      }
+      else{
+        setMessage('Error updating reputation: An unknown error occurred.')
+      }
     }
   };
 
@@ -32,7 +76,13 @@ export default function HomePage() {
       await neoIDGovernance.createProposal(proposalDescription);
       setMessage('Proposal created successfully!');
     } catch (error) {
-      setMessage('Error creating proposal: ' + error.message);
+      if (error instanceof Error){
+        setMessage('Error creating proposal: ' + error.message);
+
+      }
+      else{
+        setMessage('Error creating proposal: An unknown error occurred.')
+      }
     }
   };
 
