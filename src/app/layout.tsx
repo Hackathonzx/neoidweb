@@ -1,5 +1,5 @@
 import '@/styles/globals.css';
-import LoadingOverlay from './LoadingOverlay';
+import LoadingOverlay from '@/app/LoadingOverlay';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
