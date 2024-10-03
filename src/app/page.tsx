@@ -94,7 +94,7 @@ export default function HomePage() {
 
       <main>
         <h1 style={{backgroundColor: '#FFFFFF'}}>Welcome to the NeoID Reputation System</h1>
-        <p>Register with a Decentralized Identifier (DID) and manage your reputation.</p>
+        <p>Registerr with a Decentralized Identifier (DID) and manage your reputation.</p>
 
         <section style={{backgroundColor: '#FFFFFF'}}>
           <h2>User Registration</h2>

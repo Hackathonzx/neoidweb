@@ -1,13 +1,86 @@
+import '@/styles/globals.css';
+import LoadingOverlay from './LoadingOverlay';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head />
       <body>
+        <LoadingOverlay />
         {children}
       </body>
     </html>
   );
 }
+
+
+
+
+
+
+
+
+
+// "use client";
+
+// import { useEffect, useState } from 'react';
+// import { useRouter } from 'next/router';
+// import Image from 'next/image';
+// import logo from '@/public/logo.png';
+// // import '../styles/globals.css';
+// import '@/styles/globals.css';
+
+// export default function RootLayout({ children }: { children: React.ReactNode }) {
+//   const [loading, setLoading] = useState(false);
+//   const router = useRouter();
+
+//   useEffect(() => {
+//     const handleStart = () => setLoading(true);
+//     const handleComplete = () => setLoading(false);
+
+//     router.events.on('routeChangeStart', handleStart);
+//     router.events.on('routeChangeComplete', handleComplete);
+//     router.events.on('routeChangeError', handleComplete);
+
+//     return () => {
+//       router.events.off('routeChangeStart', handleStart);
+//       router.events.off('routeChangeComplete', handleComplete);
+//       router.events.off('routeChangeError', handleComplete);
+//     };
+//   }, [router]);
+
+//   return (
+//     <html lang="en">
+//       <body>
+//         {loading && (
+//           <div className="overlay">
+//             <Image src={logo} alt="App Logo" className="logo" />
+//           </div>
+//         )}
+//         {children}
+//       </body>
+//     </html>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+// export default function RootLayout({ children }: { children: React.ReactNode }) {
+//   return (
+//     <html lang="en">
+//       <head />
+//       <body>
+//         {children}
+//       </body>
+//     </html>
+//   );
+// }
 
 
 
