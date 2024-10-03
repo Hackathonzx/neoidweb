@@ -4,8 +4,6 @@ import { useState } from 'react';
 import Head from 'next/head';
 
 
-
-
 // Mock definitions for demonstration purposes
 const neoID = {
   registerUser: async (did: string) => {
@@ -87,7 +85,7 @@ export default function HomePage() {
   };
 
   return (
-    <div style={{ backgroundColor: '#FFF8E1', color: '#FF6F00', minHeight: '100vh', padding: '20px' }}>
+    <div style={{ backgroundColor: '#FFF8E1', color: '#FF6F00', minHeight: '100vh', padding: '20px', borderRadius: '20%' }}>
       <Head>
         <title>NeoID Reputation System</title>
         <meta name="description" content="Decentralized identity and reputation management system." />
@@ -95,10 +93,10 @@ export default function HomePage() {
       </Head>
 
       <main>
-        <h1>Welcome to the NeoID Reputation System</h1>
+        <h1 style={{backgroundColor: '#FFFFFF'}}>Welcome to the NeoID Reputation System</h1>
         <p>Register with a Decentralized Identifier (DID) and manage your reputation.</p>
 
-        <section>
+        <section style={{backgroundColor: '#FFFFFF'}}>
           <h2>User Registration</h2>
           <input
             type="text"
@@ -112,7 +110,7 @@ export default function HomePage() {
           </button>
         </section>
 
-        <section>
+        <section style={{backgroundColor: '#FFFFFF'}}>
           <h2>Update Reputation</h2>
           <input
             type="text"
@@ -126,7 +124,7 @@ export default function HomePage() {
           </button>
         </section>
 
-        <section>
+        <section style={{backgroundColor: '#FFFFFF'}}>
           <h2>Create Governance Proposal</h2>
           <textarea
             placeholder="Describe your proposal"
@@ -146,9 +144,12 @@ export default function HomePage() {
         )}
       </main>
 
+
       <footer style={{ marginTop: '40px', textAlign: 'center' }}>
         <p>&copy; {new Date().getFullYear()} NeoID. All rights reserved.</p>
       </footer>
+
+
     </div>
   );
 }
