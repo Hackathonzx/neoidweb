@@ -1,3 +1,7 @@
+"use client"; // Add this line to mark the component as a Client Component
+
+
+
 import React from 'react';
 
 const ErrorPage = ({ error }: { error: Error }) => {
