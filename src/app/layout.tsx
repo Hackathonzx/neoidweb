@@ -73,7 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </ul>
             <div className={styles.dropdown}>
               <img
-                src="/path/to/logo.png"
+                src="@public/logo.png"
                 alt="Logo"
                 className={styles.logoImage}
                 onClick={toggleDropdown}
