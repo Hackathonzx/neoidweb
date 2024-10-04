@@ -15,3 +15,4 @@ const ErrorPage = ({ error }: { error: Error }) => {
 };
 
 export default ErrorPage;
+
