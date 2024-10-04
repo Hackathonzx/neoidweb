@@ -41,6 +41,14 @@ const reputationManagerContract = new ethers.Contract(reputationManagerAddress, 
 const accessControlContract = new ethers.Contract(accessControlAddress, accessControlAbi, provider) as unknown as AccessControl;
 const neoIDGovernanceContract = new ethers.Contract(neoIDGovernanceAddress, neoIDGovernanceAbi, provider) as unknown as NeoIDGovernance;
 
+
+// Create contract instances
+// const neoIDContract = new ethers.Contract(neoIDAddress, neoIDAbi, provider) as unknown as NeoID;
+// const reputationManagerContract = new ethers.Contract(reputationManagerAddress, reputationManagerAbi, provider) as unknown as ReputationManager;
+// const accessControlContract = new ethers.Contract(accessControlAddress, accessControlAbi, provider) as unknown as AccessControl;
+// const neoIDGovernanceContract = new ethers.Contract(neoIDGovernanceAddress, neoIDGovernanceAbi, provider) as unknown as NeoIDGovernance;
+
+
 export {
   provider,
   neoIDContract,

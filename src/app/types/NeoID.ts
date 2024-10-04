@@ -55,9 +55,6 @@ export interface NeoID extends BaseContract {
 
 
 
-
-
-
 // import { BaseContract, BigNumberish, Signer, ethers, ContractTransaction } from 'ethers';
 
 // export interface NeoID extends BaseContract {
