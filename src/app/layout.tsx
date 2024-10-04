@@ -25,17 +25,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
 'use client'
-
 
 // app/Layout.tsx
 import React, { Suspense, useState } from 'react';
@@ -86,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               )}
             </div>
           </header>
-          <main>
+          <main className={styles.mainContent}>
             {children}
           </main>
           <footer>
@@ -97,6 +87,81 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </Suspense>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// 'use client'
+
+
+// // app/Layout.tsx
+// import React, { Suspense, useState } from 'react';
+// import '@/styles/globals.css';
+// import LoadingOverlay from '@/app/LoadingOverlay';
+// import Link from 'next/link';
+// import styles from './Layout.module.css';
+
+// export default function RootLayout({ children }: { children: React.ReactNode }) {
+//   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+//   const toggleDropdown = () => {
+//     setDropdownOpen(!dropdownOpen);
+//   };
+
+//   return (
+//     <Suspense fallback={<div>Loading...</div>}>
+//       <html lang="en">
+//         <body>
+//           <LoadingOverlay />
+//           <header className={styles.navbar}>
+//             <div className={styles.logo}>
+//               <h1>NeoID</h1>
+//             </div>
+//             <ul className={styles.navLinks}>
+//               <li>
+//                 <Link href="/about">About</Link>
+//               </li>
+//               <li>
+//                 <Link href="/dashboard">Settings</Link>
+//               </li>
+//               <li>
+//                 <Link href="/contact">Login</Link>
+//               </li>
+//             </ul>
+//             <div className={styles.dropdown}>
+//               <img
+//                 src="@/public/logo.png"
+//                 alt="Logo"
+//                 className={styles.logoImage}
+//                 onClick={toggleDropdown}
+//               />
+//               {dropdownOpen && (
+//                 <div className={styles.dropdownContent}>
+//                   <Link href="/account">Account</Link>
+//                   <Link href="/login">Login</Link>
+//                 </div>
+//               )}
+//             </div>
+//           </header>
+//           <main>
+//             {children}
+//           </main>
+//           <footer>
+//             {/* <p>&copy; {new Date().getFullYear()} NeoID. All rights reserved.</p> */}
+//           </footer>
+//         </body>
+//       </html>
+//     </Suspense>
+//   );
+// }
 
 
 
