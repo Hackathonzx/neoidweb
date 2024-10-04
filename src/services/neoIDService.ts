@@ -60,6 +60,8 @@ export async function increaseReputation(userAddress: string, amount: BigNumberi
 
 
 
+
+
 // Function to decrease reputation
 export async function decreaseReputation(userAddress: string, amount: BigNumberish, signer: ethers.Signer): Promise<void> {
     const contractWithSigner = reputationManagerContract.connect(signer);
