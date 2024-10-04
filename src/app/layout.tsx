@@ -73,7 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </ul>
             <div className={styles.dropdown}>
               <img
-                src="@public/logo.png"
+                src="@/public/logo.png"
                 alt="Logo"
                 className={styles.logoImage}
                 onClick={toggleDropdown}
@@ -90,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
           <footer>
-            <p>&copy; {new Date().getFullYear()} NeoID. All rights reserved.</p>
+            {/* <p>&copy; {new Date().getFullYear()} NeoID. All rights reserved.</p> */}
           </footer>
         </body>
       </html>
