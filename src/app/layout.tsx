@@ -53,10 +53,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/about">About</Link>
               </li>
               <li>
-                <Link href="/dashboard">Settings</Link>
+                <Link href="/dashboard">Dashboard</Link>
               </li>
               <li>
-                <Link href="/contact">Login</Link>
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
             <div className={styles.dropdown}>
