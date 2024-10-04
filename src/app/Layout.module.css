@@ -1,11 +1,25 @@
 /* app/Layout.module.css */
-.navbar {
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     background-color: #333;
     color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
   }
   
   .logo {
@@ -55,4 +69,22 @@
   
   .dropdownContent a:hover {
     background-color: #ddd;
+  }
+  
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 80px; /* Adjust this value based on the height of your navbar */
+    width: 100%;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
   }

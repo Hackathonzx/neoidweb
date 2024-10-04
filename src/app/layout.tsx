@@ -23,8 +23,6 @@
 
 
 
-
-
 'use client'
 
 // app/Layout.tsx
@@ -44,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <html lang="en">
-        <body>
+        <body className={styles.body}>
           <LoadingOverlay />
           <header className={styles.navbar}>
             <div className={styles.logo}>
@@ -79,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className={styles.mainContent}>
             {children}
           </main>
-          <footer>
+          <footer className={styles.footer}>
             {/* <p>&copy; {new Date().getFullYear()} NeoID. All rights reserved.</p> */}
           </footer>
         </body>
@@ -87,9 +85,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </Suspense>
   );
 }
-
-
-
 
 
 
