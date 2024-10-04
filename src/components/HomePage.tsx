@@ -1,6 +1,6 @@
 "use client"; // Add this line to mark the component as a Client Component
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import Head from 'next/head';
 
 // Mock definitions for demonstration purposes
@@ -71,6 +71,8 @@ export default function HomePage() {
   };
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
+
     <div style={{ backgroundColor: '#FFF8E1', color: '#FF6F00', minHeight: '100vh', padding: '20px', borderRadius: '20%' }}>
       <Head>
         <title>NeoID Reputation System</title>
@@ -134,5 +136,6 @@ export default function HomePage() {
         <p>&copy; {new Date().getFullYear()} NeoID. All rights reserved.</p>
       </footer>
     </div>
+    </Suspense>
   );
 }

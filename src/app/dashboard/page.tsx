@@ -3,6 +3,8 @@ import Head from 'next/head';
 
 function DashboardPage() {
   return (
+    <Suspense fallback={<div>Loading...</div>}>
+
     <div style={{ backgroundColor: '#FFF8E1', color: '#FF6F00', minHeight: '100vh', padding: '20px' }}>
       <Head>
         <title>NeoID Dashboard</title>
@@ -19,6 +21,7 @@ function DashboardPage() {
         <p>&copy; {new Date().getFullYear()} NeoID. All rights reserved.</p>
       </footer>
     </div>
+    </Suspense>
   );
 }
 

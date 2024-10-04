@@ -16,12 +16,14 @@
 
 
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import '@/styles/globals.css';
 import LoadingOverlay from '@/app/LoadingOverlay';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
+    <Suspense fallback={<div>Loading...</div>}>
+
     <html lang="en">
       <body>
         <LoadingOverlay />
@@ -36,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
       </body>
     </html>
+    </Suspense>
   );
 }
 

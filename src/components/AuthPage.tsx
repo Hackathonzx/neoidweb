@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import Head from 'next/head';
 import { ethers } from 'ethers';
 import { registerUser } from '@/services/neoIDService';
@@ -37,6 +37,8 @@ export default function AuthPage() {
   };
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
+
     <div className={styles.container}>
       <Head>
         <title>{isRegister ? 'Register' : 'Login'} - NeoID</title>
@@ -77,5 +79,6 @@ export default function AuthPage() {
         <p>&copy; {new Date().getFullYear()} NeoID. All rights reserved.</p>
       </footer>
     </div>
+    </Suspense>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import logo from '@/public/logo.png';
@@ -21,6 +21,8 @@ export default function LoadingOverlay() {
   }, [pathname, searchParams]);
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
+
     <>
       {loading && (
         <div className="overlay">
@@ -28,6 +30,7 @@ export default function LoadingOverlay() {
         </div>
       )}
     </>
+    </Suspense>
   );
 }
 
