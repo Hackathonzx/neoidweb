@@ -1,28 +1,24 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { usePathname, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import logo from '@/public/logo.png';
 
 export default function LoadingOverlay() {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const handleStart = () => setLoading(true);
     const handleComplete = () => setLoading(false);
 
-    router.events.on('routeChangeStart', handleStart);
-    router.events.on('routeChangeComplete', handleComplete);
-    router.events.on('routeChangeError', handleComplete);
+    handleStart();
+    handleComplete();
 
-    return () => {
-      router.events.off('routeChangeStart', handleStart);
-      router.events.off('routeChangeComplete', handleComplete);
-      router.events.off('routeChangeError', handleComplete);
-    };
-  }, [router]);
+    // You can add more logic here if needed to handle route changes
+  }, [pathname, searchParams]);
 
   return (
     <>
@@ -34,3 +30,54 @@ export default function LoadingOverlay() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// "use client";
+
+
+// import { useEffect, useState } from 'react';
+// import { useRouter } from 'next/navigation';
+// import Image from 'next/image';
+// import logo from '@/public/logo.png';
+
+// export default function LoadingOverlay() {
+//   const [loading, setLoading] = useState(false);
+//   const router = useRouter();
+
+//   useEffect(() => {
+//     const handleStart = () => setLoading(true);
+//     const handleComplete = () => setLoading(false);
+
+//     router.events.on('routeChangeStart', handleStart);
+//     router.events.on('routeChangeComplete', handleComplete);
+//     router.events.on('routeChangeError', handleComplete);
+
+//     return () => {
+//       router.events.off('routeChangeStart', handleStart);
+//       router.events.off('routeChangeComplete', handleComplete);
+//       router.events.off('routeChangeError', handleComplete);
+//     };
+//   }, [router]);
+
+//   return (
+//     <>
+//       {loading && (
+//         <div className="overlay">
+//           <Image src={logo} alt="App Logo" className="logo" />
+//         </div>
+//       )}
+//     </>
+//   );
+// }
