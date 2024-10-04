@@ -1,3 +1,22 @@
+// import '@/styles/globals.css';
+// import LoadingOverlay from '@/app/LoadingOverlay';
+
+// export default function RootLayout({ children }: { children: React.ReactNode }) {
+//   return (
+//     <html lang="en">
+//       <body>
+//         <LoadingOverlay />
+//         {children}
+//       </body>
+//     </html>
+//   );
+// }
+
+
+
+
+
+import React from 'react';
 import '@/styles/globals.css';
 import LoadingOverlay from '@/app/LoadingOverlay';
 
@@ -6,16 +25,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <LoadingOverlay />
-        {children}
+        <header>
+          <h1> NeoID</h1>
+        </header>
+        <main>
+          {children}
+        </main>
+        <footer>
+          <p>&copy; {new Date().getFullYear()} NeoID. All rights reserved.</p>
+        </footer>
       </body>
     </html>
   );
 }
-
-
-
-
-
 
 
 
