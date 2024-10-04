@@ -55,7 +55,7 @@ export default function AuthPage() {
             className={styles.input}
             required
           />
-          {isRegister && <small className={styles.tip}>(username)</small>}
+          {isRegister && <small className={styles.tip}>(create your unique DID username)</small>}
           <input
             type="password"
             placeholder="Enter your password"
