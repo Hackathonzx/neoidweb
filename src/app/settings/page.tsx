@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import Head from 'next/head';
 import styles from '@/styles/Settings.module.css';
 
@@ -9,6 +9,8 @@ export default function SettingsPage() {
   const [smsNotifications, setSmsNotifications] = useState(false);
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
+
     <div className={styles.container}>
       <Head>
         <title>NeoID Settings</title>
@@ -81,5 +83,6 @@ export default function SettingsPage() {
         <p>&copy; {new Date().getFullYear()} NeoID. All rights reserved.</p>
       </footer>
     </div>
+    </Suspense>
   );
 }
